@@ -55,6 +55,8 @@ class PlantUMLDiagram(BaseDiagram):
         command = [
             'java',
             '-Dplantuml.include.path=%s' % startDir,
+            '-Xmx1024m',
+            '-DPLANTUML_LIMIT_SIZE=8192',
             '-jar',
             self.proc.plantuml_jar_path,
             '-pipe',
